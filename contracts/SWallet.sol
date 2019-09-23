@@ -48,7 +48,7 @@ def __init__(numSigs_: int128, required_: int128, r_: uint256[MAX_OWNERS], s_: u
     assert numSigs_ == count, "Invalid signature"
 */
 
-    constructor(uint256 numSigs_, uint256 required_, bytes32[] memory r_, bytes32[] memory s_, uint8[] memory v_) public {
+    constructor(uint256 numSigs_, uint256 required_, bytes32[MAX_OWNERS] memory r_, bytes32[MAX_OWNERS] memory s_, uint8[MAX_OWNERS] memory v_) public {
         require(numSigs_ <= MAX_OWNERS, "Too many owners");
         require(required_ <= numSigs_, "Too many signatures required");
         numSigs = numSigs_;
